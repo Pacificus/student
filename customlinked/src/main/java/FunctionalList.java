@@ -1,5 +1,5 @@
 
-public interface Functional {
+public interface FunctionalList {
 
   void push(Student student);
 

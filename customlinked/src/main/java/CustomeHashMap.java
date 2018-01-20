@@ -1,27 +1,22 @@
-public class CustomeHashMap implements Functional {
+public class CustomeHashMap {
+  private final static int SIZE = 10;
+  private Node[] nodes;
+
+  public CustomeHashMap() {
+    nodes = new Node[SIZE];
+  }
 
   private static class Node {
-    private Student student;
+    private Student key;
+    private int value;
     private Node next;
 
-    public Node(Student student) {
-      this.student = student;
+    public Node(Student key, int value) {
+      this.key = key;
+      this.value = value;
       next = null;
     }
   }
 
-  @Override
-  public void push(Student student) {
 
-  }
-
-  @Override
-  public Student pop() {
-    return null;
-  }
-
-  @Override
-  public Student peek() {
-    return null;
-  }
 }

@@ -1,6 +1,6 @@
 import java.util.NoSuchElementException;
 
-public class CustomeLinkedlist implements Functional {
+public class CustomeLinkedlist implements FunctionalList {
   private Node begin;
   private Node end;
 
