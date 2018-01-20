@@ -11,9 +11,33 @@ public class CustomeHashMap implements  FunctionalHashMap{
     return 0;
   }
 
+
   @Override
   public void put(Student key, int grade) {
+    Node curent = new Node(key, grade);
+    int index = calculateIndex(key.hashCode());
 
+    if (nodes[index] == null) {
+      nodes[index] = curent;
+      return;
+    }
+
+    Node goOn = nodes[index];
+    while (true) {
+
+      if ( goOn.key.equals(key) ) {
+        goOn.value = grade;
+        return;
+      }
+
+      if (goOn.next == null) {
+        break;
+      }
+
+      goOn = goOn.next;
+    }
+
+    goOn.next = curent;
   }
 
   private static class Node {
