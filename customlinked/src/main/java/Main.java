@@ -1,3 +1,4 @@
+
 public class Main {
 
   public static void main(String[] args) {
@@ -7,6 +8,13 @@ public class Main {
         .age(21)
         .build();
 
-    System.out.println(petro);
+    Student oleg = Student.createBuilder()
+        .firstname("Oleg")
+        .secondName("Markevich")
+        .age(35)
+        .build();
+
+    System.out.println(petro + " " + petro.hashCode());
+    System.out.println(oleg + " " + oleg.hashCode());
   }
 }

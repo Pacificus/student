@@ -1,7 +1,26 @@
+import java.util.Objects;
+
 public class Student {
   private String firstName;
   private String secondName;
   private int age;
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (!(o instanceof Student)) return false;
+    Student student = (Student) o;
+    return age == student.age &&
+        Objects.equals(firstName, student.firstName) &&
+        Objects.equals(secondName, student.secondName);
+  }
+
+  @Override
+  public int hashCode() {
+    int hash = Objects.hash(firstName, secondName, age);
+    hash = Math.abs(hash);
+    return hash;
+   }
 
   @Override
   public String toString() {
