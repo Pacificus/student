@@ -14,7 +14,19 @@ public class Main {
         .age(35)
         .build();
 
-    System.out.println(petro + " " + petro.hashCode());
-    System.out.println(oleg + " " + oleg.hashCode());
+    Student alex = Student.createBuilder()
+        .firstname("Alex")
+        .secondName("Rosini")
+        .age(21)
+        .build();
+
+    CustomeLinkedlist list = new CustomeLinkedlist();
+    list.push(petro);
+    list.push(oleg);
+    list.push(alex);
+
+    while ( !list.isEmpty() ) {
+      System.out.println(list.pop());
+    }
   }
 }

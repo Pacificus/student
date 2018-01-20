@@ -28,7 +28,8 @@ public class Student {
         "firstName='" + firstName + '\'' +
         ", secondName='" + secondName + '\'' +
         ", age=" + age +
-        '}';
+        '}'
+        ;
   }
 
   private Student() {
