@@ -1,3 +1,8 @@
+import com.sun.xml.internal.bind.v2.model.core.NonElement;
+import org.omg.CosNaming.NamingContextPackage.NotEmpty;
+
+import java.util.NoSuchElementException;
+
 public class CustomeHashMap implements  FunctionalHashMap{
   private final static int SIZE = 10;
   private Node[] nodes;
@@ -8,7 +13,24 @@ public class CustomeHashMap implements  FunctionalHashMap{
 
   @Override
   public int get(Student key) {
-    return 0;
+    int index = calculateIndex(key.hashCode());
+    if (nodes[index] == null) {
+      throw new NoSuchElementException("Element not found.");
+    }
+
+    Node goOn = nodes[index];
+    while (true) {
+
+      if ( goOn.key.equals(key) ) {
+        return goOn.value;
+      }
+
+      if (goOn == null) {
+        throw new NoSuchElementException("Element not found.");
+      }
+
+      goOn = goOn.next;
+    }
   }
 
 
